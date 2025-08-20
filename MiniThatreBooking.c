@@ -3,20 +3,20 @@
 int theatre[5][10];
 
 void seatbooking(int row,int col){
-    if(theatre[row][col]==1){
+    if(theatre[row-1][col-1]==1){
         printf("\nSeat at row %d col %d is already booked, unable to book",row,col);
         return;
     }
-    theatre[row][col]=1;
+    theatre[row-1][col-1]=1;
     printf("\nSuccessfully booked your seat at row %d col %d",row,col);
 }
 
 void seatcancel(int row,int col){
-    if(theatre[row][col]==0){
+    if(theatre[row-1][col-1]==0){
         printf("\nSeat at row %d col %d is not pre-booked, unable to cancel",row,col);
         return;
     }
-    theatre[row][col]=0;
+    theatre[row-1][col-1]=0;
     printf("\nSuccesfully un-booked your seat at row %d col %d",row,col);
 }
 
@@ -49,7 +49,7 @@ void main() {
     printf("THEATRE STRUCTURE:-\nROWS = 5\nCOLUMNS = 10");
     printf("\n\nChoices Available:-\n1.Book Seat\n2.Cancel Seat Booking\n3.Check Seat Availability\n4.Exit");
     while(1){
-        printf("\nEnter your choice:");
+        printf("\n\nEnter your choice:");
         scanf("%d",&choice);
         if(choice==1){
             printf("\nEnter row column nos. of your seat: ");
